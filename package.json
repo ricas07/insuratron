@@ -1,0 +1,14 @@
+{
+  "name": "insuratron",
+  "version": "1.0.0",
+  "description": "This app will handle insurance stuff",
+  "main": "index.js",
+  "author": "Ricardo Perez <ricas07@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
