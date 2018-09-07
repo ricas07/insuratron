@@ -1,0 +1,14 @@
+#auto-quote-form {
+    margin: 0 auto;
+    width: 75%;
+}
+
+#auto-quote-form label {
+    margin: 10px 0 0 0;
+}
+
+@media(max-width: 768px) {
+    #auto-quote-form {
+        width: 100%;
+    }
+}
