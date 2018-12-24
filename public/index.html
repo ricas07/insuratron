@@ -12,15 +12,16 @@
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/custom.css" />
 	</head>
 	<body class="is-preload">
 
 		<!-- Header -->
 			<header id="header">
 				<a class="logo" href="index.html">E-Z Auto Insurance</a>
-				<nav>
+				<!-- <nav>
 					<a href="#menu">Menu</a>
-				</nav>
+				</nav> -->
 			</header>
 
 		<!-- Nav -->
@@ -41,15 +42,73 @@
 				<video autoplay loop muted playsinline src="images/banner.mp4"></video>
 			</section>
 
-		<!-- Highlights -->
-			<section class="wrapper">
+		<!-- Main -->
+			<section id="main" class="wrapper">
 				<div class="inner">
 					<header class="special">
-						<h2>Online Quotes</h2>
-						<p>Tell us a little about you and your car and we'll send you the best rate available.</p>
-						<a href="quote.html" class="button primary">Request A Quote</a>
+						<h2>GET A QUOTE TODAY!</h2>
 					</header>
-					<div class="highlights">
+					<div class="content">
+						<p>Tell us a little about you and your car(s) and we'll send you the best rate available.</p>
+						<form id="auto-quote-form" action="submit-form" method="post">
+							<h3>About you</h3>
+							<label>First Name:</label>
+							<input name="firstName" type="text" />
+							<label>Last Name:</label>
+							<input name="lastName" type="text" />
+							<label>Email Address:</label>
+							<input name="emailAddress" type="email" />
+							<label>Phone:</label>
+							<input name="phone" type="tel" />
+							<label>Date of Birth</label>
+							<input name="dob" type="text" />
+							<label>Zip code</label>
+							<input name="zip" type="text" />
+							<label>Driver's License #</label>
+							<input name="licenseNumber" type="text" />
+							<label>Driver's License Country</label>
+							<input name="licenseCountry" type="text" />
+							<label>Have you had insurance for 6 months or more?</label>
+							<select name="previousInsurance">
+    							<option value="" disabled selected>Select</option>
+								<option value="yes">Yes</option>
+								<option value="no">No</option>
+							</select>
+							<label>Accidents/Tickets in the last 2 years?</label>
+							<select name="accidents">
+    							<option value="" disabled selected>Select</option>
+								<option value="yes">Yes</option>
+								<option value="no">No</option>
+							</select>
+							<h3 class="about-car-heading">About your car</h3>
+							<div class="autos-container">
+								<div class="auto-container">
+									<h4 class="car-section-header">Car #<span class="auto-number"></span></h4>
+									<label>Year</label>
+									<input name="year[]" type="text" />
+									<label>Make</label>
+									<input name="make[]" type="text" />
+									<label>Model</label>
+									<input name="model[]" type="text" />
+									<label>Vin #</label>
+									<input name="vin[]" type="text" />
+									<label>Coverage</label>
+									<select name="coverage[]">
+										<option value="" disabled selected>Select</option>
+										<option value="full">Full</option>
+										<option value="liability">Liability</option>
+									</select>
+								</div>
+							</div>
+							<a href="#" id="add-a-car">Add another car</a>
+							<button class="primary" type="submit">Submit</button>
+							<div class="clear"></div>
+						</form>
+						<div id="form-success-message" class="alert success hidden">Your request was sent! We will contact you with your quote soon.</div>
+					</div>
+				</div>
+			</section>
+					<!-- <div class="highlights">
 						<section>
 							<div class="content">
 								<header>
@@ -104,7 +163,7 @@
 								<p>Have a question? Odds are someone else has already asked it, so look for the answer here.</p>
 							</div>
 						</section>
-					</div>
+					</div> -->
 				</div>
 			</section>
 
@@ -170,7 +229,7 @@
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="inner">
-					<div class="content">
+					<!-- <div class="content">
 						<section>
 							<h3>Accumsan montes viverra</h3>
 							<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing. Lorem ipsum dolor vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing sed feugiat eu faucibus. Integer ac sed amet praesent. Nunc lacinia ante nunc ac gravida.</p>
@@ -193,7 +252,7 @@
 								<li><a href="#"><i class="icon fa-github">&nbsp;</i>Github</a></li>
 							</ul>
 						</section>
-					</div>
+					</div> -->
 					<div class="copyright">
 						&copy; Untitled. Photos <a href="https://unsplash.co">Unsplash</a>, Video <a href="https://coverr.co">Coverr</a>.
 					</div>
@@ -206,6 +265,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/custom.js"></script>
 
 	</body>
 </html>

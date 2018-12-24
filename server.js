@@ -13,7 +13,6 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 
 app.get('/', (req, res) => res.sendFile(path.join(`${__dirname}/public/index.html`)));
 app.post('/submit-form', upload.array(), (req, res) => {
-    console.log(req.body);
     sendMail(req.body);
     res.sendStatus(200);
 });

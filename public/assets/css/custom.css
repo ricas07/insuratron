@@ -1,3 +1,11 @@
+.clear {
+    clear: both;
+}
+
+.hidden {
+    display: none;
+}
+
 #auto-quote-form {
     margin: 0 auto;
     width: 75%;
@@ -7,8 +15,27 @@
     margin: 10px 0 0 0;
 }
 
+#auto-quote-form button.primary {
+    margin: 10px 0 0 0;
+    float: right;
+}
+
 @media(max-width: 768px) {
     #auto-quote-form {
         width: 100%;
     }
+}
+
+.about-car-heading, .car-section-header {
+    margin-top: 20px;
+}
+
+.alert {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.alert.success {
+    border: solid 1px #2514a1;
 }

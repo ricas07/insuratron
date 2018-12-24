@@ -1,53 +1,31 @@
 const nodemailer = require('nodemailer');
 
 const sendMail = (data) => {
-    console.log('sendMail message', data);
     const transporter = nodemailer.createTransport(
         {
             service: 'gmail',
             auth: {
-                user: 'ricas07@gmail.com',
-                pass: 'Asdfni83gM',
+                user: 'ezautoquotebot@gmail.com',
+                pass: process.env.EMAIL_PASSWORD,
             },
         },
-        // {
-        //     host: 'smtp.gmail.com',
-        //     port: 993,
-        //     secure: true,
-        //     auth: {
-        //         user: 'ricas07@gmail.com',
-        //         pass: 'Asdfni83gM',
-        //     },
-        //     logger: false,
-        //     debug: false, // include SMTP traffic in the logs
-        // },
-        // {
-        //     // default message fields
-
-        //     // sender info
-        //     from: 'E-Z Auto <ezauto@gmail.com>',
-        //     headers: {
-        //         'X-Laziness-level': 1000 // just an example header, no need to use this
-        //     },
-        // },
     );
+    const firstLine ='<p>You have a new quote request. Get to it, bitch!</p>';
+    const html = Object.keys(data).reduce((message, field) => message.concat(`<p>${field}: ${data[field]}</p>`), firstLine);
+
     const message = {
         // Comma separated list of recipients
-        to: 'ricas07@gmail.com, ezautoins@gmail.com ',
+        // to: 'ricas07@gmail.com, ezautoins@gmail.com ',
+        to: 'ricas07@gmail.com',
 
         // Subject of the message
-        subject: 'This is a test, bitch!',
+        subject: `Quote request from ${data.firstName} ${data.lastName}`,
 
         // plaintext body
-        text: `${data.firstName} ${data.lastName} ${data.email} ${data.message}`,
+        text: 'You have a new quote request. Get to it, bitch!',
 
         // HTML body
-        html:
-            `<p>You have a new quote request. Get to it, bitch!</p>
-            <p>First Name: ${data.firstName}</p>
-            <p>Last Name: ${data.lastName}</p>
-            <p>Email: ${data.email}</p>
-            <p>Message: ${data.message}</p>`,
+        html,
     };
 
     transporter.sendMail(message, (error, info) => {
