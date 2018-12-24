@@ -15,8 +15,7 @@ const sendMail = (data) => {
 
     const message = {
         // Comma separated list of recipients
-        // to: 'ricas07@gmail.com, ezautoins@gmail.com ',
-        to: 'ricas07@gmail.com',
+        to: 'ricas07@gmail.com, ezautoins@gmail.com ',
 
         // Subject of the message
         subject: `Quote request from ${data.firstName} ${data.lastName}`,
